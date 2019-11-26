@@ -1,5 +1,6 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+
+import "./App.css";
 
 function App() {
   return (
@@ -8,13 +9,29 @@ function App() {
         <p>How To Demo.me</p>
       </header>
       <div className='App-Body-1'>
-        <p>Paragraph 1</p>
+        <img src={require("./aa.png")} alt='apparition' />
+        <div>
+          <p>
+            its <b>MY</b> demo website
+          </p>
+          <p>YEAH, its incomplete just like this Ancient Apparition</p>
+        </div>
       </div>
       <div className='App-Body-2'>
-        <p>Paragraph 2</p>
+        <img src={require("./drow.png")} alt='drow' />
+        <div>
+          <p>Currently Demoing howdoiplay.com</p>
+        </div>
       </div>
       <div className='App-Body-3'>
-        <p>Paragraph 3</p>
+        <div>
+          <p>This content originally belongs to this guy here -></p>
+
+          <p>Click on Him to go see the original -></p>
+        </div>
+        <a href='https://howdoiplay.com' target='blank'>
+          <img src={require("./tsunami.png")} alt='tsunami643' />
+        </a>
       </div>
     </div>
   );
