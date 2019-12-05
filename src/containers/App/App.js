@@ -1,7 +1,7 @@
 import React from "react";
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core';
-
+import Tips from '../../components/tips/Tips'
 const useStyles = makeStyles(theme=>({
 
   App: {
@@ -59,19 +59,19 @@ const useStyles = makeStyles(theme=>({
   
 
 }));
-
-const App = () => {
+const Home = () => {
   const classes = useStyles();
-  return (
-    <div className={classes.App}>
-      <Router >
-      <header className={classes.AppHeader}>
+  return(
+  <>
+  <header className={classes.AppHeader}>
         <p>How To Demo.me</p>
       </header>
       <div className={classes.AppBody2}>
+        <Link to='/play' style={{textDecoration:'none', outline:'none'}}>
         <img src={require("../Assets/drow.png")} alt='drow' />
+        </Link>
         <div>
-          <p>Currently Demoing howdoiplay.com</p>
+          <p>Currently Re-Coding howdoiplay.com</p>
         </div>
       </div>
       <div className={classes.AppBody3}>
@@ -84,6 +84,19 @@ const App = () => {
           <img src={require("../Assets/tsunami.png")} alt='tsunami643' />
         </a>
       </div>
+      </>
+  )}
+
+const App = () => {
+  const classes = useStyles();
+  return (
+    <div className={classes.App}>
+      <Router >
+      
+      <Switch>
+        <Route exact path='/play' component={Tips} />
+        <Route path='/' component={Home} />
+      </Switch>
       </Router>
     </div>
   );
