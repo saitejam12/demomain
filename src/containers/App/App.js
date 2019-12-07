@@ -1,7 +1,7 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
 import {makeStyles} from '@material-ui/core';
-import Tips from '../../components/tips/Tips'
+import Play from '../../components/tips/Play'
 const useStyles = makeStyles(theme=>({
 
   App: {
@@ -94,7 +94,7 @@ const App = () => {
       <Router >
       
       <Switch>
-        <Route exact path='/play' component={Tips} />
+        <Route exact path='/play' component={Play} />
         <Route path='/' component={Home} />
       </Switch>
       </Router>
