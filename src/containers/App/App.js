@@ -1,17 +1,16 @@
-import React from "react";
-import {BrowserRouter as Router, Route, Switch, Link} from 'react-router-dom';
-import {makeStyles} from '@material-ui/core';
-import Play from '../../components/tips/Play'
-const useStyles = makeStyles(theme=>({
-
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+import { makeStyles } from '@material-ui/core';
+import Play from './Play';
+const useStyles = makeStyles(theme => ({
   App: {
     textAlign: 'center',
   },
-  
+
   AppLogo: {
     height: '40vmin',
   },
-  
+
   AppHeader: {
     backgroundColor: '#282c34',
     minHeight: '100vh',
@@ -22,7 +21,7 @@ const useStyles = makeStyles(theme=>({
     fontSize: '2rem',
     color: 'white',
   },
-  AppBody1 :{
+  AppBody1: {
     backgroundColor: '#282c34',
     minHeight: '100vh',
     display: 'flex',
@@ -52,23 +51,21 @@ const useStyles = makeStyles(theme=>({
     fontSize: '2rem',
     color: 'white',
   },
-  
+
   AppLink: {
     color: '#09d3ac',
-  }
-  
-
+  },
 }));
 const Home = () => {
   const classes = useStyles();
-  return(
-  <>
-  <header className={classes.AppHeader}>
+  return (
+    <>
+      <header className={classes.AppHeader}>
         <p>How To Demo.me</p>
       </header>
       <div className={classes.AppBody2}>
-        <Link to='/play' style={{textDecoration:'none', outline:'none'}}>
-        <img src={require("../Assets/drow.png")} alt='drow' />
+        <Link to="/play" style={{ textDecoration: 'none', outline: 'none' }}>
+          <img src={require('../Assets/drow.png')} alt="drow" />
         </Link>
         <div>
           <p>Currently Re-Coding howdoiplay.com</p>
@@ -80,26 +77,26 @@ const Home = () => {
 
           <p>Click on Him to go see the original -></p>
         </div>
-        <a href='https://howdoiplay.com' target='blank'>
-          <img src={require("../Assets/tsunami.png")} alt='tsunami643' />
+        <a href="https://howdoiplay.com" target="blank">
+          <img src={require('../Assets/tsunami.png')} alt="tsunami643" />
         </a>
       </div>
-      </>
-  )}
+    </>
+  );
+};
 
 const App = () => {
   const classes = useStyles();
   return (
     <div className={classes.App}>
-      <Router >
-      
-      <Switch>
-        <Route exact path='/play' component={Play} />
-        <Route path='/' component={Home} />
-      </Switch>
+      <Router>
+        <Switch>
+          <Route exact path="/play" component={Play} />
+          <Route path="/" component={Home} />
+        </Switch>
       </Router>
     </div>
   );
-}
+};
 
 export default App;
