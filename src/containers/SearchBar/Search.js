@@ -69,10 +69,13 @@ const Search = hero => {
             onChange={handleChange} 
             value={name}
             InputProps={{ ...params.InputProps, endAdornment:(
-                <IconButton disableRipple onClick={trigger} className={[classes.roll,animate?classes.dice:null]}> 
-                <img src={dice} alt="dice" className={classes.image}/>
-                </IconButton>
-            ), ...params.InputProps.endAdornment }}
+                <>
+                  <IconButton disableRipple onClick={trigger} className={[classes.roll,animate?classes.dice:null]}> 
+                  <img src={dice} alt="dice" className={classes.image}/>
+                  </IconButton>
+                  {params.InputProps.endAdornment}
+                </>
+            ) }}
            />
         )}
         
