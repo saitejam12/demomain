@@ -1,6 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core';
 import Search from '../containers/SearchBar/Search';
+import Tips from '../containers/Tips/Tips';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -16,6 +17,7 @@ const Play = () => {
   return (
     <div className={classes.root}>
       <Search />
+      <Tips />
       Some random shit goes here.
     </div>
   );

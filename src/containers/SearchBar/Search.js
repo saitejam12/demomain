@@ -5,7 +5,6 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 import { heros, quotes } from '../../constants/index';
 import dice from '../Assets/media/dice.svg';
 
@@ -92,9 +91,9 @@ const Search = hero => {
   );
   return (
     <div className={classes.root}>
-      <Typography>{random[0]}</Typography>
+      {random[0]}
       {searchBar}
-      <Typography>{random[1]}</Typography>
+      {random[1]}
     </div>
   );
 };
