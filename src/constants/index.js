@@ -154,15 +154,13 @@ export const quotes = [
   [`WHO NEEDS VERSATILITY? I'M THE`, `MASTER.`],
   [`I NEED THE LEVEL 25 DOTA PLUS VOICE LINE ON`, `.`],
   [`ALL THE BOOSTERS ARE SPAMMING`, `? THEY MUST BE ON TO SOMETHING.`],
-  [
-    `<img src={'./assets/media/OSfrog.png'} alt='OSfrog'> LE BALANCED`,
-    `HERO '<img src={'./assets/media/OSfrog.png'} alt='OSfrog'>`,
-  ],
+  // [
+  //   `<img src="../containers/Assets/media/OSfrog.png" alt="osfrog" /> LE BALANCED`,
+  //   `HERO <img src={require('../containers/Assets/media/OSfrog.png')} alt="osfrog" />`,
+  // ],
   [`But is `, `good as a Pos 6 🤔?`],
-  [
-    `One`,
-    `Ye.. im DED`,
-  ] /*,
+  [`One`, `Ye.. im DED`],
+  /*,
               ["GOOD TIPS MATE REAL USEFUL, SEE U AT", "J"],
               ["U", "-PLAYING PUNKS ARE NEVER SATISFIED ARE YOU?"],
               ["HOW 2 PLEY", "? #HARDWORK #DEDICATION. DEFENSIVE LANING."],
@@ -180,5 +178,5 @@ export const quotes = [
               ["", "is an ass, and we won't be picking it again."],
               ["Nippy. Kind.", "."],
               ["But is ", "good as pos 6 🤔?"],
-              ["one", "Ye.. im DED"]*/,
+              ["one", "Ye.. im DED"]*/
 ];

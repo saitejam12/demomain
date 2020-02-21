@@ -7,7 +7,7 @@ const useStyles = makeStyles(theme => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    backgroundColor: '#ffffee',
+    backgroundColor: '#fff',
   },
 }));
 

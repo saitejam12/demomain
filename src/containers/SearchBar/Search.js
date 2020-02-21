@@ -1,12 +1,14 @@
+/* eslint-disable no-eval */
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import IconButton from '@material-ui/core/IconButton';
 import { makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import { heros, quotes } from '../../constants/index';
+import dice from '../Assets/media/dice.svg';
 
-// import dice image from https://game-icons.net/1x1/delapouite/perspective-dice-six-faces-six.html
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
@@ -20,65 +22,71 @@ const useStyles = makeStyles(theme => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
   },
-  roll:{ 
-    transition: theme.transitions.create(["transform"], {
-      duration: theme.transitions.duration.short
-    })
+  roll: {
+    transition: theme.transitions.create(['transform'], {
+      duration: theme.transitions.duration.short,
+    }),
   },
-  dice:{
-    transform: "rotate(7200deg)",
+  dice: {
+    transform: 'rotate(7200deg)',
   },
-  image:{
-    height:'32px',
-    width:'32px',
+  image: {
+    height: '32px',
+    width: '32px',
   },
 }));
-
-const random = quotes[Math.floor(Math.random() * quotes.length)];
-console.log(random);
 
 const Search = hero => {
   const classes = useStyles();
   const [name, setName] = React.useState(hero);
   const [animate, setAnimate] = React.useState(false);
-  
-  const handleChange = e => {
-    setName(e.target.value);
-  };
-  
+
+  const random = quotes[Math.floor(Math.random() * quotes.length)];
+
   const trigger = () => {
     setTimeout(() => {
       setAnimate(true);
+      const random = heros[Math.floor(Math.random() * heros.length)];
+      setName(random);
     }, 200);
     setAnimate(false);
-  }
+  };
 
   const searchBar = (
     <div className={classes.autoComplete}>
       <Autocomplete
-        options={heros.map(hero => hero)}
         freeSolo
         disableOpenOnFocus
+        disableClearable
+        value={name}
+        options={heros.map(hero => hero)}
         style={{ width: 300 }}
         renderInput={params => (
-          <TextField {...params} 
-            label="Hero Name" 
-            size="small" 
-            variant="outlined" 
-            fullWidth 
-            onChange={handleChange} 
-            value={name}
-            InputProps={{ ...params.InputProps, endAdornment:(
+          <TextField
+            {...params}
+            label="Hero Name"
+            size="small"
+            variant="outlined"
+            fullWidth
+            InputProps={{
+              ...params.InputProps,
+              endAdornment: (
                 <>
-                  <IconButton disableRipple onClick={trigger} className={[classes.roll,animate?classes.dice:null]}> 
-                  <img src={dice} alt="dice" className={classes.image}/>
-                  </IconButton>
+                  <InputAdornment position="end">
+                    <IconButton
+                      disableRipple
+                      onClick={trigger}
+                      className={animate ? `${classes.roll} ${classes.dice}` : null}
+                    >
+                      <img src={dice} alt="dice" className={classes.image} />
+                    </IconButton>
+                  </InputAdornment>
                   {params.InputProps.endAdornment}
                 </>
-            ) }}
-           />
+              ),
+            }}
+          />
         )}
-        
       />
     </div>
   );
